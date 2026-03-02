@@ -1,0 +1,4 @@
+# systemd_override_sevice: "tmp.mount.service"
+# systemd_override_content: |
+#   [Service]
+#   Restart=on-failure

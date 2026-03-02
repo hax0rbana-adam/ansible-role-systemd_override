@@ -1,0 +1,18 @@
+---
+galaxy_info:
+  author: Adam
+  description: Systemd override - Modify services without changing the .service file
+  license: MIT
+  company: none
+  min_ansible_version: "2.10"
+  platforms:
+    - name: Debian
+      versions:
+        - trixie
+  galaxy_tags:
+    - systemd
+    - override
+  namespace: hax0rbana_adam
+  role_name: systemd_override
+
+dependencies: []
