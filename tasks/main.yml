@@ -6,17 +6,12 @@
     group: root
     mode: '0755'
 
-- name: Setting nginx to restart on failure
+- name: Setting override file for {{ systemd_override_sevice }}
   ansible.builtin.copy:
-    content: |
-      [Service]
-      Restart=on-failure
+    content: "{{ systemd_override_content }}"
     dest: /etc/systemd/system/{{ systemd_override_sevice }}.d/override.conf
     owner: root
     group: root
     mode: '0644'
-
-- name: Making sure the override is loaded into systemd
-  ansible.builtin.systemd:
-    name: "{{ systemd_override_sevice }}"
-    daemon_reload: true
+  # We restart the service is something changed to ensure the override is active
+  notify: Restart the {{ systemd_override_sevice }} service

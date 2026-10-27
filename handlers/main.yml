@@ -1,0 +1,4 @@
+- name: Restart service {{ systemd_override_sevice }}
+  ansible.builtin.systemd_service:
+    name: "{{ systemd_override_sevice }}"
+    state: restarted
