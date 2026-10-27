@@ -14,4 +14,4 @@
     group: root
     mode: '0644'
   # We restart the service is something changed to ensure the override is active
-  notify: Restart the {{ systemd_override_sevice }} service
+  notify: Restart service {{ systemd_override_sevice }}
